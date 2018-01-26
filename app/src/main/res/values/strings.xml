@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CalculoCombustivelFlex</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="combustiveis">
+        <item>gasolina</item>
+        <item>alcool</item>
+        <item>eletrecidade</item>
+        <item>gas</item>
+    </string-array>
+
+</resources>
