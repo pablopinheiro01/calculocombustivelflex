@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"></import>
+
+        <variable
+            name="item"
+            type="br.com.calculadora.calculocombustivel.ui.databinding.ReabastecimentoData" />
+
+        <variable
+            name="clicaNoItem"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        android:onClick="@{clicaNoItem::onClick}"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/item_cadastrado_tipo_combustivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif"
+                android:text="@{item.tipoCombustivel}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Alcool/Etanol Aditivado" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_texto_km_rodado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Km rodados:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/item_cadastrado_tipo_combustivel"
+                app:layout_constraintTop_toBottomOf="@+id/item_cadastrado_tipo_combustivel" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_valor_km_rodados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="@{item.kmRodados}"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrado_texto_km_rodado"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/item_cadastrado_texto_km_rodado"
+                tools:text="200" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_texto_consumo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Consumo:"
+                app:layout_constraintStart_toStartOf="@+id/item_cadastrado_texto_km_rodado"
+                app:layout_constraintTop_toBottomOf="@+id/item_cadastrado_texto_km_rodado" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_valor_km_por_litro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{item.consumoKilometrosPorLitro}"
+                app:layout_constraintStart_toStartOf="@+id/item_cadastrado_valor_km_rodados"
+                app:layout_constraintTop_toBottomOf="@+id/item_cadastrado_valor_km_rodados"
+                tools:text="15" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_texto_quantidade_combustivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="sans-serif"
+                android:text="Litros:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/item_cadastrado_texto_consumo"
+                app:layout_constraintTop_toBottomOf="@+id/item_cadastrado_texto_consumo" />
+
+            <TextView
+                android:id="@+id/item_cadastrad_valor_quantidade_combustivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{item.litros}"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrado_texto_quantidade_combustivel"
+                app:layout_constraintStart_toStartOf="@+id/item_cadastrado_valor_km_por_litro"
+                app:layout_constraintTop_toBottomOf="@+id/item_cadastrado_valor_km_por_litro"
+                tools:text="100" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_complemento_km_rodados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Km"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrado_valor_km_rodados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/item_cadastrado_valor_km_rodados" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_complemento_km_por_litro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Km/L"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrado_valor_km_por_litro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/item_cadastrado_valor_km_por_litro" />
+
+            <TextView
+                android:id="@+id/item_cadastrado_complemento_litros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="litros"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrad_valor_quantidade_combustivel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/item_cadastrad_valor_quantidade_combustivel" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Data"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/item_cadastrado_tipo_combustivel"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/item_cadastrado_tipo_combustivel" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@={item.dataGravacao}"
+                android:inputType="date"
+                tools:text="12/07/2021" />
+
+            <ImageButton
+                android:id="@+id/item_cadastrado_botao_excluir"
+                android:layout_width="73dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:adjustViewBounds="true"
+                android:background="#FAF6F6"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_action_excluir"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="VectorDrawableCompat" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

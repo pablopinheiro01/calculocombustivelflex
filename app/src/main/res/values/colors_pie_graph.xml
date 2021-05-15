@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xiketic">#03071E</color>
+    <color name="darksienna">#370617</color>
+    <color name="rosewood">#6a040f</color>
+    <color name="darkred">#9d0208</color>
+    <color name="rossocorsa">#d00000</color>
+    <color name="vermilion">#dc2f02</color>
+    <color name="persimmon">#e85d04</color>
+    <color name="carrotorange">#f48c06</color>
+    <color name="orangeweb">#faa307</color>
+    <color name="selectiveyellow">#ffba08</color>
+
+    <color name="indigodye">#094074</color>
+    <color name="queenblue">#3c6997</color>
+    <color name="skybluecrayola">#5adbff</color>
+    <color name="etonblue">#86cb92</color>
+    <color name="shinyshamrock">#71b48d</color>
+    <color name="redcrayola">#e84855</color>
+    <color name="brownsugar">#b56b45</color>
+    <color name="operamauve1">#ba7ba1</color>
+    <color name="operamauve2">#c28cae</color>
+
+    <integer-array name="colors_pie_one">
+        <item>2131099895</item>
+        <item>2131099702</item>
+        <item>2131099868</item>
+        <item>2131099701</item>
+        <item>2131099869</item>
+        <item>2131099893</item>
+        <item>2131099849</item>
+        <item>2131099696</item>
+        <item>2131099848</item>
+        <item>2131099874</item>
+    </integer-array>
+
+    <array name="colors_pie_one_ref">
+        <item>#03071E</item>
+        <item>@color/darksienna</item>
+        <item>@color/rosewood</item>
+        <item>@color/darkred</item>
+        <item>@color/rossocorsa</item>
+        <item>@color/vermilion</item>
+        <item>@color/persimmon</item>
+        <item>@color/carrotorange</item>
+        <item>@color/orangeweb</item>
+        <item>@color/selectiveyellow</item>
+    </array>
+    <array name="colors_pie_second_ref">
+        <item>@color/indigodye</item>
+        <item>@color/queenblue</item>
+        <item>@color/skybluecrayola</item>
+        <item>@color/etonblue</item>
+        <item>@color/shinyshamrock</item>
+        <item>@color/redcrayola</item>
+        <item>@color/brownsugar</item>
+        <item>@color/operamauve1</item>
+        <item>@color/operamauve2</item>
+    </array>
+</resources>

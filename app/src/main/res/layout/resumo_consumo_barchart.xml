@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Spinner
+            android:id="@+id/resumo_consumo_lista_meses_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:dropDownWidth="wrap_content"
+            android:gravity="right"
+            android:spinnerMode="dropdown"
+            android:textAlignment="inherit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:entries="@array/meses_busca_resumo_gastos" />
+
+
+
+        <TextView
+            android:id="@+id/resumo_conta_texto_posicao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            tools:text="teste"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resumo_consumo_lista_meses_spinner"
+
+            />
+
+        <com.yabu.livechart.view.LiveChart
+            android:id="@+id/resumo_conta_livechart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resumo_conta_texto_posicao" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

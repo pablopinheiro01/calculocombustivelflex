@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos_combustiveis">
+        <item>Gasolina</item>
+        <item>Gasolina Aditivada</item>
+        <item>Gasolina Podium</item>
+        <item>Alcool/Etanol</item>
+        <item>Alcool/Etanol Aditivado</item>
+        <item>Diesel</item>
+    </string-array>
+
+</resources>

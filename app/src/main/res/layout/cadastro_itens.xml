@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="item"
+            type="br.com.calculadora.calculocombustivel.ui.databinding.ReabastecimentoData" />
+
+        <variable
+            name="salvaCadastro"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="itemSelecionado"
+            type="android.widget.AdapterView.OnItemSelectedListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <Spinner
+            android:id="@+id/cadastro_itens_lista_combustivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/tipos_combustiveis"
+            android:gravity="right"
+            android:selectedItemPosition="@={item.tipoCombustivelPosition}"
+            android:spinnerMode="dropdown"
+            android:textAlignment="inherit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif"
+            android:text="Km's rodados"
+            android:textSize="18sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/cadastro_item_km_rodados"
+            app:layout_constraintEnd_toStartOf="@+id/cadastro_item_km_rodados"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cadastro_item_km_rodados" />
+
+        <EditText
+            android:id="@+id/cadastro_item_km_rodados"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:digits="0123456789."
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:hint="150.5"
+            android:inputType="numberDecimal"
+            android:text="@={item.kmRodados}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="16sp"
+            app:inserePontoEZero="@{true}"
+            app:layout_constraintEnd_toEndOf="@+id/cadastro_itens_lista_combustivel"
+            app:layout_constraintTop_toBottomOf="@+id/cadastro_itens_lista_combustivel" />
+
+        <EditText
+            android:id="@+id/cadastro_item_quantidade_litros"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:digits="0123456789."
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:hint="22.62"
+            android:inputType="numberDecimal"
+            android:text="@={item.litros}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="16sp"
+            android:typeface="normal"
+            app:inserePontoEZero="@{true}"
+
+            app:layout_constraintEnd_toEndOf="@+id/cadastro_item_km_rodados"
+            app:layout_constraintTop_toBottomOf="@+id/cadastro_item_km_rodados" />
+
+        <TextView
+            android:id="@+id/cadastro_itens_texto_tipo_combustivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif"
+            android:text="Combustivel"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/cadastro_itens_lista_combustivel"
+            app:layout_constraintEnd_toStartOf="@+id/cadastro_itens_lista_combustivel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/cadastro_itens_botao_salvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:onClick="@{salvaCadastro::onClick}"
+            android:text="Salvar"
+            app:backgroundTint="#5B12DC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cadastro_item_edittext_valor" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif"
+            android:text="Litros"
+            android:textSize="18sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/cadastro_item_quantidade_litros"
+            app:layout_constraintEnd_toStartOf="@+id/cadastro_item_quantidade_litros"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cadastro_item_quantidade_litros" />
+
+        <TextView
+            android:id="@+id/cadastro_item_erro_generico_texto_escondido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#EA0707"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/cadastro_itens_botao_salvar"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/cadastro_itens_botao_salvar"
+            app:layout_constraintTop_toBottomOf="@+id/cadastro_itens_botao_salvar"
+            tools:text="Mensagem de Erro Generica" />
+
+        <TextView
+            android:id="@+id/cadastro_itens_texto_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif"
+            android:text="Valor"
+            android:textSize="18sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/cadastro_item_edittext_valor"
+            app:layout_constraintEnd_toStartOf="@+id/cadastro_item_edittext_valor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cadastro_item_edittext_valor" />
+
+        <EditText
+            android:id="@+id/cadastro_item_edittext_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="52,69"
+            android:digits="0123456789."
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="@={item.valor}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="16sp"
+            android:typeface="normal"
+            app:inserePontoEZero="@{true}"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/cadastro_item_quantidade_litros"
+            app:layout_constraintTop_toBottomOf="@+id/cadastro_item_quantidade_litros" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
